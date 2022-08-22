@@ -1,7 +1,7 @@
-struct Cuadrado {
+typedef struct {
     int lado;
-};
+}ST_CUADRADO;
 
-Cuadrado cargarCuadrado(int);
-float area(Cuadrado);
-float perimetro(Cuadrado);
+ST_CUADRADO cargarCuadrado(int);
+float area(ST_CUADRADO);
+float perimetro(ST_CUADRADO);
