@@ -34,7 +34,7 @@ void imprimirVector(int vector[10])
 void reasignarVector(int vector[10])
 {
     int copiaVector[10];
-    
+
     for (int i = 0; i < 10; i++)
     {
         copiaVector[i] = vector[i];
@@ -48,7 +48,8 @@ void reasignarVector(int vector[10])
     return;
 }
 
-void invertirVector(int vector[10]) {
+void invertirVector(int vector[10])
+{
 
     int copiaVector[10];
 
