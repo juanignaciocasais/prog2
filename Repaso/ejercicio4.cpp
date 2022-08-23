@@ -77,21 +77,21 @@ ST_Informe cargarDatos(){
 
     int i = 0;
 
-    printf("%s ", "Ingrese número de legajo:");
+    printf("Ingrese número de legajo:");
     scanf(" %d", &clientes.legajo);
 
     informe.legajoMenor = clientes.legajo;
 
     while(clientes.legajo != 0){
 
-        printf("%s ", "Ingrese su nombre: ");
-        scanf(" %9s", clientes.nombre);
+        printf("Ingrese su nombre: ");
+        scanf(" %s", clientes.nombre);
 
         if(i == 0 ) {
             strcpy(informe.primerEmpleado, clientes.nombre);
         }
 
-        printf("%s ", "Ingrese tipo de tramite s, v ó m:");
+        printf("Ingrese tipo de tramite s, v ó m:");
         scanf(" %c", &clientes.tipoTramite);
 
         informe.cantPersonasAtendidas++;
@@ -104,7 +104,7 @@ ST_Informe cargarDatos(){
             strcpy(informe.empleadoLegajoMenor,clientes.nombre);
         }
 
-        printf("%s ", "Ingrese numero de legajo:");
+        printf("Ingrese numero de legajo:");
         scanf(" %d", &clientes.legajo);
     }
 
