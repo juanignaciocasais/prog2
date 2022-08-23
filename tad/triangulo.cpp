@@ -25,4 +25,3 @@ float area(ST_TRIANGULO triangulo) {
 float perimetro(ST_TRIANGULO triangulo) {
     return triangulo.lado1 +  triangulo.lado2 + triangulo.base;
 }
-

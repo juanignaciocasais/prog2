@@ -13,4 +13,3 @@ float area(ST_CUADRADO cuadrado) {
 float perimetro(ST_CUADRADO cuadrado) {
     return cuadrado.lado * 4;
 }
-

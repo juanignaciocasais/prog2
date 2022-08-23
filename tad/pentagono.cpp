@@ -18,4 +18,3 @@ float area(ST_PENTAGONO pentagono) {
 float perimetro(ST_PENTAGONO pentagono) {
     return pentagono.lado * 5;
 }
-

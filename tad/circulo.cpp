@@ -13,4 +13,3 @@ float area(ST_CIRCULO circulo) {
 float perimetro(ST_CIRCULO circulo) {
     return 2 * 3.1415 * circulo.radio;
 }
-
