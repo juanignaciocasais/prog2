@@ -1,16 +1,15 @@
 #include "cuadrado.h"
 
-Cuadrado cargarCuadrado(int lado) {
-    Cuadrado cuadrado;
+ST_CUADRADO cargarCuadrado(int lado) {
+    ST_CUADRADO cuadrado;
     cuadrado.lado = lado;
     return cuadrado;
 }
 
-float area(Cuadrado cuadrado) {
+float area(ST_CUADRADO cuadrado) {
     return cuadrado.lado * cuadrado.lado;
 }
 
-float perimetro(Cuadrado cuadrado) {
+float perimetro(ST_CUADRADO cuadrado) {
     return cuadrado.lado * 4;
 }
-
