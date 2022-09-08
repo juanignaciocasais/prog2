@@ -42,9 +42,9 @@ int main()
 
     ST_ALUMNO alumno;
 
-    printf("Ingrese el Nombre y apellido del alumno: ");
-    fgets(alumno.nombreApellido, sizeof(alumno.nombreApellido), stdin);
-    fflush(stdin);
+    printf("Ingrese el Nombre y Apellido del alumno o 'Fin' para finalizar: ");
+    scanf("%S", alumno.nombreApellido);
+    discardChars();
 
     FILE *archivoBinario = fopen("DIAFINALES.DAT", "wb");
     if (archivoBinario == NULL)
@@ -69,6 +69,7 @@ int main()
 
         printf("Ingrese el Nombre y apellido del alumno: ");
         scanf("%s", alumno.nombreApellido);
+        discardChars();
     }
 
     fclose(archivoBinario);
