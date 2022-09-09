@@ -26,13 +26,12 @@ typedef struct
     int mes;
     int anio;
     char nombreApellido[26];
-} ST_ALUMNO;
+} ST_INSCRIPCION;
 
 void discardChars()
 {
     char c;
-    while ((c = getchar()) != '\n' && c != EOF)
-        ;
+    while ((c = getchar()) != '\n' && c != EOF);
     return;
 }
 
@@ -40,13 +39,13 @@ int main()
 {
     system("clear");
 
-    ST_ALUMNO alumno;
+    ST_INSCRIPCION alumno;
 
     printf("Ingrese el Nombre y Apellido del alumno o 'Fin' para finalizar: ");
-    scanf("%S", alumno.nombreApellido);
+    scanf("%s", alumno.nombreApellido);
     discardChars();
 
-    FILE *archivoBinario = fopen("DIAFINALES.DAT", "wb");
+    FILE *archivoBinario = fopen("DIAFINALES2.DAT", "wb");
     if (archivoBinario == NULL)
     {
         printf("Error al abrir el archivo");
@@ -60,12 +59,12 @@ int main()
         scanf("%d", &alumno.codMateria);
 
         printf("Legajo: ");
-        scanf("%d", &alumno.codMateria);
+        scanf("%d", &alumno.legajo);
 
         printf("Ingrese el día, mes y año (dd/mm/aaaa): ");
         scanf("%d/%d/%d", &alumno.dia, &alumno.mes, &alumno.anio);
 
-        fwrite(&alumno, sizeof(ST_ALUMNO),1,archivoBinario);
+        fwrite(&alumno, sizeof(ST_INSCRIPCION),1,archivoBinario);
 
         printf("Ingrese el Nombre y apellido del alumno: ");
         scanf("%s", alumno.nombreApellido);
