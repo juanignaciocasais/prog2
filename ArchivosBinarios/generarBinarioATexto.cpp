@@ -4,22 +4,22 @@
 typedef struct
 {
     int legajo;
-    int codMateria;
-    int dia;
-    int mes;
-    int anio;
-    char nombreApellido[26];
+    char apellidoYNombre[31];
+    char domicilio[21];
+    int codigoPostal;
+    char telefono[11];
+    int anioIngreso;
 } ST_ALUMNO;
 
 int main()
 {
     ST_ALUMNO r;
-    FILE *f1 = fopen("DIAFINALES.DAT", "rb+");
-    FILE *f2 = fopen("DIAFINALES.TXT", "wt+");
+    FILE *f1 = fopen("ALUMACTU.dat", "rb+");
+    FILE *f2 = fopen("alumactu.TXT", "wt+");
     fread(&r, sizeof(r), 1, f1);
     while (!feof(f1))
     {
-        fprintf(f2, "%d %d %d/%d/%d %s", r.legajo, r.codMateria, r.dia, r.mes, r.anio, r.nombreApellido);
+        fprintf(f2, "%d %s %s %d %s %d\n", r.legajo, r.apellidoYNombre, r.domicilio, r.codigoPostal, r.telefono, r.anioIngreso);
         fread(&r, sizeof(r), 1, f1);
     }
     fclose(f1);

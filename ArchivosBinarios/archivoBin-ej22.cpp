@@ -104,8 +104,9 @@ int main () {
     float choferes[MAX_CHOFERES];
     ST_PATENTE patentesAlDestino116[200];
 
-    leer(&destino, archivoDestinos);
-    
+    //leer(&destino, archivoDestinos);
+    fread(&destino, sizeof(destino), 1, archivoDestinos);
+    fwrite(&destino, sizeof(destino), 1, archivoDestinos);
     while(!feof(archivoDestinos)) {
 
         vectorDestino[destino.destino - 1].destino = destino.destino;
