@@ -15,7 +15,7 @@ typedef struct Nodo
 void create(STR_NODO **lista);
 bool isEmpty(STR_NODO *lista);
 STR_NODO *insertInFront(int valor, STR_NODO **lista);
-STR_NODO *insertAtEnd(STR_NODO **lista, int valor);
+STR_NODO *insertAtEnd(int valor, STR_NODO **lista);
 STR_NODO *insertOrdered(int valor, STR_NODO **lista);
 void clearList(STR_NODO **lista);
 STR_NODO *search(STR_NODO *lista, int valor);
@@ -23,11 +23,10 @@ int deleteFirst(STR_NODO **lista);
 int deleteNode(STR_NODO **lista, int valor);
 void sort(STR_NODO **lista);
 int count(STR_NODO *listaAux);
+STR_NODO* insertWithoutDuplicate(int valor, STR_NODO **lista);
 void cargarLista(STR_NODO **lista, int desde, int hasta);
 void print(STR_NODO *listaAux);
 void cargarListaConArray(STR_NODO **lista, int array[], int cant);
-void unirListasOrdenadas(STR_NODO **listaA, STR_NODO **listaB, STR_NODO **listaC);
-void apareoListasOrdenadas(STR_NODO **listaA, STR_NODO **listaB, STR_NODO **listaC);
 
 int main()
 {
@@ -190,6 +189,15 @@ int count(STR_NODO *listaAux)
     }
 
     return cant;
+}
+
+STR_NODO* insertWithoutDuplicate(int valor, STR_NODO **lista) {
+    STR_NODO *nodo = search(*lista, valor);
+    if(nodo == NULL) {
+        nodo = insertOrdered(valor, lista);
+    }
+
+    return nodo;
 }
 
 void cargarLista(STR_NODO **lista, int desde, int hasta)

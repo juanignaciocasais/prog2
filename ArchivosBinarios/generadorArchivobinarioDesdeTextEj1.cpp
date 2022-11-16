@@ -9,13 +9,9 @@ using namespace std;
 // Estructura para leer/escribir en los archivos
 typedef struct
 {
+    char apellidoYNombre[36];
     int legajo;
-    char apellidoYNombre[31];
-    char domicilio[21];
-    int codigoPostal;
-    char telefono[11];
-    int anioIngreso;
-    char codigoOperacion[2];
+    int division;
 } STR_DATO;
 
 // Funciones de archivos
@@ -29,7 +25,7 @@ void generarArchivo(const char *entrada, const char *salida);
 
 int main () {
     
-    generarArchivo("novedades.txt", "novedades.dat"); // Genera el archivo de entrada, se puede comentar si ya lo tienen
+    generarArchivo("alumnos.txt", "alumnos.dat"); // Genera el archivo de entrada, se puede comentar si ya lo tienen
     
     return 0;
 }
@@ -58,12 +54,9 @@ int escribir(STR_DATO registro, FILE * file) {
 
 STR_DATO parsear(char *cadena) {
     STR_DATO dato;
-    dato.legajo = atoi(strtok(cadena, ";"));
-    strcpy(dato.apellidoYNombre,strtok(NULL, ";"));
-    strcpy(dato.domicilio,strtok(NULL, ";"));
-    dato.codigoPostal = atoi(strtok(NULL, ";"));
-    strcpy(dato.telefono,strtok(NULL, ";"));
-    dato.anioIngreso = atoi(strtok(NULL, "\n"));
+    strcpy(dato.apellidoYNombre,strtok(cadena, ";"));
+    dato.legajo = atoi(strtok(NULL, ";"));
+    dato.division = atoi(strtok(NULL, "\n"));
     return dato;
 }
 
